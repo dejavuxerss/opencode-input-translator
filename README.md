@@ -39,7 +39,23 @@ Any OpenAI-compatible API works:
 - OpenAI
 - Ollama
 - LM Studio
+- [OpenCode Zen](https://opencode.ai/docs/tr/zen/)
 - Any other service with an OpenAI-compatible `/v1/chat/completions` endpoint
+
+### OpenCode Zen (MiniMax M2.5 Free)
+
+[OpenCode Zen](https://opencode.ai/docs/tr/zen/) provides free access to **MiniMax M2.5 Free** (as well as other models). To use it:
+
+1. Sign in at [https://opencode.ai/auth](https://opencode.ai/auth) and copy your Zen API key.
+2. Set these environment variables:
+
+```bash
+export TRANSLATOR_API_KEY="sk-zen-..."   # Your Zen API key
+export TRANSLATOR_BASE_URL="https://opencode.ai/zen/v1"
+export TRANSLATOR_MODEL="minimax-m2.5-free"
+```
+
+> **Note**: MiniMax M2.5 Free is available at no cost for a limited time. Zen passes through 0% OpenAI/SDK fees on free models.
 
 ## License
 
