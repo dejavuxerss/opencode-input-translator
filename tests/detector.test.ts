@@ -42,6 +42,24 @@ describe('isEnglish', () => {
     expect(isEnglish('123 + 456 = 789')).toBe(true);
   });
 
+  test('Turkish text (with Turkish chars) → false', () => {
+    expect(isEnglish('Merhaba! Bu dosyayı oku ve bana ne olduğunu söyle')).toBe(
+      false,
+    );
+  });
+
+  test('Turkish text (with ş, ç, ğ) → false', () => {
+    expect(
+      isEnglish(
+        'Şu kod parçasını refactor eder misin? Çok karmaşık görünüyor.',
+      ),
+    ).toBe(false);
+  });
+
+  test('Turkish text (with ü, ö, İ) → false', () => {
+    expect(isEnglish('İşte bu projenin mimarisini anlat')).toBe(false);
+  });
+
   test('Code-like ASCII → true', () => {
     expect(isEnglish('const x = 42; // hello')).toBe(true);
   });
