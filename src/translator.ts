@@ -17,7 +17,7 @@ export async function translateToEnglish(
   try {
     const provider = createOpenAICompatible({
       name: 'translator',
-      baseURL: `${config.baseUrl}/v1`,
+      baseURL: config.baseUrl,
       apiKey: config.apiKey,
       supportsStructuredOutputs: true,
     });

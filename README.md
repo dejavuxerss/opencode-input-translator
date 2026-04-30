@@ -19,7 +19,7 @@ Set these environment variables before running OpenCode:
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `TRANSLATOR_API_KEY` | Yes | — | API key for the OpenAI-compatible translation service |
-| `TRANSLATOR_BASE_URL` | Yes | — | Base URL of the translation API (e.g. `https://api.openai.com`) |
+| `TRANSLATOR_BASE_URL` | Yes | — | Base URL of the translation API (e.g. `https://api.openai.com/v1`, `https://opencode.ai/zen/v1`) |
 | `TRANSLATOR_MODEL` | No | `gpt-5-nano-2025-08-07` | Model to use for translation |
 
 ## How it works
