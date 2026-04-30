@@ -8,6 +8,7 @@ export const InputTranslatorPlugin: Plugin = async ({ client }) => {
   const apiKey = process.env.TRANSLATOR_API_KEY;
   const baseUrl = process.env.TRANSLATOR_BASE_URL;
   const model = process.env.TRANSLATOR_MODEL ?? 'gpt-5-nano-2025-08-07';
+  const structuredOutput = process.env.TRANSLATOR_STRUCTURED_OUTPUT !== 'false';
 
   if (!apiKey || !baseUrl) {
     await client.app.log({
@@ -21,7 +22,7 @@ export const InputTranslatorPlugin: Plugin = async ({ client }) => {
     return {};
   }
 
-  const config: TranslatorConfig = { apiKey, baseUrl, model };
+  const config: TranslatorConfig = { apiKey, baseUrl, model, structuredOutput };
 
   return {
     'experimental.chat.messages.transform': async (_input, output) => {
